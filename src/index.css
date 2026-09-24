@@ -1,0 +1,85 @@
+:root{
+
+  --green-400: hsl(172, 67%, 45%);
+
+  --green-900: hsl(183, 100%, 15%);
+  --grey-500: hsl(186, 14%, 43%);
+  --grey-400: hsl(184, 14%, 56%);
+  --grey-200: hsl(185, 41%, 84%);
+  --grey-50: hsl(189, 47%, 97%);
+  --white: hsl(0, 100%, 100%);  
+
+}
+
+@font-face {
+  font-family: Space-mono;
+  src: url(../font/Space_Mono/SpaceMono-Bold.ttf);
+}
+*{
+  font-family: Space-mono;
+  transition: all .2s linear;
+}
+/* // Body Color // */
+body {
+  background-color: var(--grey-200);
+}
+
+.container{
+  background-color: var(--white);
+}
+
+input{
+  background-color: var(--grey-50);
+  color: var(--grey-400);
+  &::placeholder{
+    color: var(--grey-400);
+  }
+}
+.show{
+  background-color: var(--green-900);
+}
+
+.show>span{
+  color: var(--green-400);
+  font-size: 40px;
+  text-align: right;
+}
+
+.calculate-tip span{
+  font-size: 12px;
+  color: var(--grey-500);
+}
+
+.show p{
+  font-size: 14px;
+  padding-top: 10px;
+  color: var(--grey-50);
+}
+.show p>span{
+  font-size: 10px;
+  color: var(--grey-400);
+}
+
+button{
+  color: var(--white);
+  background-color: var(--green-900);
+  /* font-size: 25px; */
+  padding: 6px;
+  &:hover{
+    cursor: pointer;
+    color:var(--green-900) ;
+    background-color: var(--green-400);
+  }
+}
+.btn6{
+  color: var(--grey-400);
+  background-color: var(--grey-50);
+}
+
+input{
+  caret-color: var(--green-400);
+  outline:s none;
+  &:focus{
+    outline-color: var(--green-400);
+  }
+}

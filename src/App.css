@@ -1,0 +1,268 @@
+/* // Reset Area // */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* // Root Area // */
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  width: auto;
+  min-height: 100vh;
+  height: auto;
+}
+
+/* // Logo // */
+.img {
+  box-sizing: content-box;
+  padding: 2px;
+}
+
+.img img[name="logo"] {
+  margin-bottom: 50px;
+}
+
+/* // Bill App Contailer // */
+.container {
+  width: 880px;
+  min-height: 400px;
+  padding: 25px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.calculate-tip {
+  padding: 10px;
+  width: 400px;
+  /* flex-grow: 1; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas:
+    'bill'
+    'select'
+    'numpple'
+  ;
+  justify-content: space-evenly;
+}
+
+/* // Calculate Here // */
+.bill {
+  grid-area: 'bill';
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.bill>span {
+  text-transform: capitalize;
+}
+
+.bill input[name='bill'] {
+  padding: 10px;
+  text-align: right;
+}
+
+.binput {
+  position: relative;
+}
+
+.binput .doller {
+  position: absolute;
+  margin: 20px;
+  top: 0px;
+  left: 0px;
+
+}
+
+.tip-btn {
+  grid-area: 'select';
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.tip-btn>span {
+  text-transform: capitalize;
+}
+
+.tip-btn .btns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+
+}
+
+button {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.people {
+  grid-area: 'numpple';
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.people>span {
+  text-transform: capitalize;
+}
+
+.people input[name='numberpple'] {
+  padding: 10px;
+  text-align: right;
+}
+
+.pinput {
+  position: relative;
+}
+
+.pinput .person {
+  position: absolute;
+  margin: 20px;
+  top: 0px;
+  left: 0px;
+}
+
+/* // Tip Show Container // */
+
+.show {
+  padding: 35px;
+  width: 400px;
+  /* flex-grow: 1; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr 2fr;
+  grid-template-areas:
+    't-amt-txt amt-txt'
+    'total total-txt'
+    'rst-btn rst-btn';
+  border-radius: 10px;
+}
+
+/* // Tip Show Here // */
+
+.show .tip {
+  grid-area: 't-amt-txt';
+  text-transform: capitalize;
+}
+
+.show .tip>span {
+  text-transform: lowercase;
+}
+
+.show .amt-txt {
+  grid-area: 'amt-txt';
+}
+
+.show .ttl {
+  grid-area: 'total';
+  text-transform: capitalize;
+}
+
+.show .ttl>span {
+  text-transform: lowercase;
+}
+
+.show .totl-txt {
+  grid-area: 'total-txt';
+}
+
+.show .reset {
+  grid-area: rst-btn;
+  align-self: self-end;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+/* // input same properties // */
+input {
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.cusin {
+  text-align: right;
+  padding: 5px 10px;
+}
+
+/* Chrome, Edge, Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.zero{
+  display: flex;
+  justify-content: space-between;
+}
+.zero #warning{
+  color: rgba(255, 0, 0, 0.706);
+}
+
+@media screen and (max-width:875px) {
+  .container {
+    height: auto;
+    width: auto;
+    min-width: 250px;
+    max-width: 1440px;
+  }
+
+  .calculate-tip {
+    flex-grow: 1;
+    width: auto;
+  }
+
+  .show {
+    flex-grow: 1;
+    width: auto;
+  }
+}
+@media screen and (max-width:400px){
+  .calculate-tip .btns{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: 
+  'btn1 btn2'
+  'btn3 btn4'
+  'btn5 btn6';
+  }
+  button[key="5%"]
+  { grid-area: 'btn1';}
+  button[key="10%"]
+  { grid-area: 'btn2';}
+  button[key="15%"]
+  { grid-area: 'btn3';}
+  button[key="25%"]
+  { grid-area: 'btn4';}
+  button[key="50%"]
+  { grid-area: 'btn5';}
+  button[key="Custom"]
+  { grid-area: 'btn6';}
+
+}
